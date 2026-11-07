@@ -1,0 +1,15 @@
+name: SafeZonePro
+version: '1.0.0'
+main: dev.safezone.SafeZonePlugin
+api-version: '1.21'
+description: Wand-selected safe zones with per-zone flags, mob exclusion, no-knockback and nice visuals.
+commands:
+  safezone:
+    description: Manage safe zones
+    aliases: [sz]
+    usage: /<command> help
+    permission: safezone.admin
+permissions:
+  safezone.admin:
+    description: Manage zones and bypass every protection
+    default: op

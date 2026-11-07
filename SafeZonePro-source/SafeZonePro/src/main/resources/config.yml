@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------
+#  SafeZone Pro - config.yml   (zones themselves live in zones.yml)
+# ---------------------------------------------------------------
+settings:
+  # Blocks regular players may ALWAYS use inside a zone.
+  whitelist:
+    - ANVIL
+    - CHIPPED_ANVIL
+    - DAMAGED_ANVIL
+    - CRAFTING_TABLE
+    - ENDER_CHEST
+    - GRINDSTONE
+  # If another plugin cancelled the click on a whitelisted block, undo that.
+  force-whitelist: true
+  # false = only doors/trapdoors/gates are locked (flag "doors").
+  # true  = EVERY non-whitelisted block interaction is locked (chests, levers, buttons...).
+  lock-all-block-interactions: false
+
+mobs:
+  # Hostile mobs within this many blocks outside a zone get pushed away from it.
+  push-margin: 3.0
+
+border:
+  enabled: true
+  view-distance: 16        # only walls this close to the player are drawn
+  color: "#9fffe0"
+
+entry:
+  sound: true
+  particles: true
+  title: true
+
+messages:
+  prefix: "&8[&aSafeZone&8] &7"
+  no-permission: "&cYou don't have permission to do that."
+  player-only: "&cOnly players can use this command."
+  wand-given: "&aYou received the &6SafeZone Wand&a. Left click = pos1, right click = pos2."
+  pos-set: "&7Position &e%n% &7set to &f%x%, %y%, %z%"
+  selection-cleared: "&7Selection cleared."
+  selection-incomplete: "&cSelect both positions first (/sz wand)."
+  different-worlds: "&cBoth positions must be in the same world."
+  invalid-name: "&cNames may only contain letters, numbers, - and _ (max 32)."
+  zone-exists: "&cA zone with that name already exists."
+  zone-missing: "&cNo zone with that name."
+  zone-created: "&aZone &f%name% &acreated &7(%size%)"
+  zone-redefined: "&aZone &f%name% &aresized &7(%size%)"
+  zone-deleted: "&7Zone &f%name% &7deleted."
+  flag-set: "&7Flag &e%flag% &7of &f%name% &7is now &f%value%"
+  flag-invalid: "&cUnknown flag. Flags: &f%flags%"
+  expanded: "&7Selection expanded to full world height."
+  tp-done: "&7Teleported to &f%name%"
+  reloaded: "&aConfig and zones reloaded."
+  usage: "&cUsage: &f%usage%"
+  list-header: "&aZones &7(%count%)"
+  list-entry: "&8- &f%name% &7[%world%] %size%"
+  blocked: "&c&lNot allowed in the safe zone"
+  entry-title: "&a&l%zone%"
+  entry-subtitle: "&7You are now protected"
+  exit-actionbar: "&7You left &f%zone%"
+  help:
+    - "&a&lSafeZone Pro &7- commands"
+    - "&e/sz wand &7- get the selection axe"
+    - "&e/sz pos1 | pos2 &7- set a position at your feet"
+    - "&e/sz clear &7- clear your selection"
+    - "&e/sz expand vert &7- stretch selection to full height"
+    - "&e/sz create <name> &7- create a zone from selection"
+    - "&e/sz redefine <name> &7- resize a zone to selection"
+    - "&e/sz delete <name> &7- delete a zone"
+    - "&e/sz list &7- list zones"
+    - "&e/sz info [name] &7- zone details (default: where you stand)"
+    - "&e/sz tp <name> &7- teleport to a zone"
+    - "&e/sz flag <name> <flag> <allow|deny> &7- change a rule"
+    - "&e/sz reload &7- reload config and zones"
